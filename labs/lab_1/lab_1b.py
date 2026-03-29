@@ -10,9 +10,19 @@ and prints the result to the terminal window.
 """
 
 def request_sanitized_number(prompt: str) -> float:
+    """
+    Requests a number from the user repeatedly until a valid number is provided
+
+    Parameters:
+        prompt: the user-facing prompt
+    
+    Returns:
+        float: the number the first valid number the user entered
+
+    """
     while True:
         try:
-            number = float(input(prompt))
+            number: float = float(input(prompt))
             return number
         except ValueError:
             print("Not a valid number. Try again")
